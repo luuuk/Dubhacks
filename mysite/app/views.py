@@ -30,19 +30,22 @@ def case(request):
         report.save()
         print(report.id)
         print("collecting ip data for form")
-        #print(form.id)
-        #request.session['id'] = form.id
-
+        request.session['id'] = report.id
         return render(request, 'app/case.html')
     return render(request, 'app/case.html', {'form': form})
 
 
 def attributecollection(request):
-    form = caseForm(request.POST or None)
-    print(form.auto_id)
+    id = request.session.get('id', None)
+    report = Report.objects.filter(id=id)
     if request.method == 'POST':
+        form = caseForm(request.POST or None)
         if form.is_valid():
-            # report = form.save()
+            form.save()
+            report.case_type=form["case_type"]
+            report.date=form["date"]
+            report.description=form["description"]
+            print(report.description)
             return render(request, 'app/attrCol.html')
     return render(request, 'app/attrCol.html')
 

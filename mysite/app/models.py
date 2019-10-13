@@ -8,7 +8,7 @@ class Report(models.Model):
     uwnetid = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     last_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
-    case_type = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
+    case_type = models.CharField(max_length=DEFAULT, null=True, default="None", blank=True)
     date = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     description = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     location = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
@@ -24,7 +24,7 @@ class Report(models.Model):
     snap_acc = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
 
     def __str__(self):
-        return self.uwnetid if self.uwnetid else 'Anonymous'
+        return self.case_type
 
     def compare(this, other):
         return (this and other) and (this.casefold() == other.casefold())
