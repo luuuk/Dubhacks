@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import loginForm
+from .forms import caseForm
 from .models import Report
 
 
@@ -19,9 +19,14 @@ def emailver(request):
     return render(request, 'app/emailVer.html')
 
 
-def assaultaction(request, assaultType, desc):
+def assaultaction(request):
+    form= caseForm(request.POST or None)
+    if 'do_something' in request.POST:
+        form.save()
 
-    return render(request, 'app/assaultAction.html')
+    context= {'form': form }
+
+    return render(request, 'app/case.html', context)
 
 
 def attributecollection(request):
@@ -36,12 +41,8 @@ def attrmatch(request):
     return render(request, 'ATTRMATCH NAME')
 
 
-def login(request, username, password):
+def login(request):
 
-    if request.method == 'POST':
-        form = loginForm(request.POST)
-        if form.is_valid():
-            return render(assaultaction(request))
 
     return render(request, 'app/login.html')
 

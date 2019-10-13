@@ -6,7 +6,8 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="/attributes" method="POST">
+        {% csrf_token %}
         <h1>General information</h1>
         <h4>What type of sexual misconduct/assault?<span>*</span></h4>
         <select>
@@ -33,11 +34,13 @@
         <p class="small">Use this space to input any additional details.</p>
           <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" href="/">Continue</button>
+          <button type="submit" name="do-something" href="/">Continue</button>
         </div>
       </form>
     </div>
     <style>
+
+
     html, body {
     min-height: 100%;
     }
