@@ -4,6 +4,7 @@ from django.db import models
 
 class Report(models.Model):
     DEFAULT = 50
+    id = models.AutoField(primary_key=True)
     uwnetid = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     last_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
@@ -24,4 +25,26 @@ class Report(models.Model):
 
     def __str__(self):
         return self.uwnetid if self.uwnetid else 'Anonymous'
+
+    def compare(this, other):
+        return (this and other) and (this.casefold() == other.casefold())
+
+    def checkMatch(self):
+        allReports = Report.objects.all()
+        matches = []
+        for prev in allReports:
+            if (compare(self.last_name, prev.last_name) and compare(self.first_name, prev.first_name)) or compare(
+                    self.ig_acc, prev.ig_acc) or compare(self.phone_num, prev.phone_num):
+                matches.add(prev)
+
+        return len(matches)
+
+    def checkMatchSimple(self):
+        allReports = Report.objects.all()
+        matches = []
+        for prev in allReports:
+            if ((self.last_name and prev.last_name) and (self.last_name.casefold() == prev.last_name.casefold())):
+                matches.add(prev)
+
+        return len(matches - 1)
 
