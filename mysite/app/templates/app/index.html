@@ -29,10 +29,13 @@
 
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">>
-      <h1><u><b>SAVE:</b> Empowering Through Numbers</u></h1>
+    <div class="w3-twothird">
+      <h1><b class="item-1"> Confidential</b></h1>
+      <h1><b class="item-2"> Anonymous</b></h1>
+      <h1><b class="item-3"> Secure.</b></h1>
+      <h1 syle="padding-top: 50px"><u><b>SAVE:</b> Empowering Through Numbers</u></h1>
       <!--<h1>Empowering Through Numbers</h1>-->
-      <h1><b>Confidential. Anonymous. Secure.</b></h1>
+
       <h5 class="w3-padding-32">
         <p>Our mission is to empower sexual assault victims/survivors by providing a confidential,
         unofficial reporting service that notifies them if another user has also experienced sexual
@@ -63,6 +66,61 @@
   </form>
   </header>
   <style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+body {
+  font-family: 'Open Sans', 'sans-serif';
+  color: gray;
+  overflow: hidden;
+}
+
+.item-1,
+.item-2,
+.item-3 {
+	position: absolute;
+  display: block;
+	top: 1em;
+	color: black;
+
+  width: 30%;
+  padding-top: 15px;
+  font-size: 1em;
+
+	animation-duration: 40s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
   .button {
   background-color: #DCDCDC;
   border: none;
