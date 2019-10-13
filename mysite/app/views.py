@@ -29,7 +29,7 @@ def case(request):
         report = Report()
         print(report.id)
         print("collecting ip data for form")
-        #print(form.id)
+        print(form.id)
         #request.session['id'] = form.id
         form.ipAddr = mockIP()
 
