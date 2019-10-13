@@ -32,3 +32,6 @@ def advisorconnect(request):
 def attrmatch(request):
     return render(request, 'ATTRMATCH NAME')
 
+def login(request):
+    return render(request, 'app/login.html')
+
