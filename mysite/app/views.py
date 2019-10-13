@@ -1,10 +1,30 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .forms import caseForm
 from .models import Report
 
-
 def index(request):
+    print("Begun reporting")
     return render(request, 'app/index.html')
+
+
+def mockIP():
+    return 12356765435654
+
+
+def getID(Report):
+    return Report.id
+
+
+def confidentiality(request):
+    if request.method == 'POST':
+        print("collecting ip data")
+        report = Report().save()
+        #report.id = getID(report)
+        #client_ip = request.META['REMOTE_ADDR']
+        #lat,long = g.lat_lon(client_ip)
+        print(report.pk)
+        print(report.id)
+    return render(request, 'app/confidentiality.html')
 
 
 def resources(request):

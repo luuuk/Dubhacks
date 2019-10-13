@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="index.css">
 
 
 <body>
@@ -34,7 +33,6 @@
       <h1>SAVE</h1>
       <h1>Empowering Through Numbers</h1>
       <h5 class="w3-padding-32">Our mission is to empower sexual assault victims/survivors by providing a confidential, unofficial reporting service that notifies them if another user has also experienced sexual harassment from the same perpetrator... [TBF] </h5>
-      <!--<p class="w3-text-grey">Confidentiality Details</p>// -->
     </div>
 
     <div class="w3-third w3-center">
@@ -46,8 +44,9 @@
 <!-- Header -->
 <header class="w3-container w3-deep-purple w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Click Below to Start a Report</h1>
-  <form>
-    <button type="submit" formaction="confidentiality.html">Begin</button>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" formaction="confidentiality">Begin</button>
   </form>
   </header>
   <style>
