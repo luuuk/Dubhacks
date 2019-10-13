@@ -76,8 +76,6 @@ def attrmatch(request):
 
 
 def login(request):
-
-
     return render(request, 'app/login.html')
 
 
@@ -91,12 +89,3 @@ def match(request):
         return render(request, 'app/match.html', {'Matches':numMatches})
     else:
         return render(request, 'app/nomatch.html')
-
-def case(request):
-    return render(request, 'app/case.html')
-
-def confidentiality(request):
-    return render(request, 'app/confidentiality.html')
-
-def attrCol(request):
-    return render(request, 'app/attrCol.html')
