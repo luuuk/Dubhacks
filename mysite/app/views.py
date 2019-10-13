@@ -1,9 +1,16 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
 from .forms import caseForm
 from .models import Report
 
 def index(request):
     print("Begun reporting")
+    for i in range(2):
+        send_mail('This is a test',
+        'Im watching you...',
+        'save2019@hushmail.com',
+        ['serenagilani@comcast.net'],
+        fail_silently=False)
     return render(request, 'app/index.html')
 
 
@@ -18,11 +25,8 @@ def getID(Report):
 def confidentiality(request):
     if request.method == 'POST':
         print("collecting ip data")
-        report = Report().save()
-        #report.id = getID(report)
-        #client_ip = request.META['REMOTE_ADDR']
-        #lat,long = g.lat_lon(client_ip)
-        print(report.pk)
+        report = Report()
+        report.save()
         print(report.id)
     return render(request, 'app/confidentiality.html')
 

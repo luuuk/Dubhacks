@@ -26,7 +26,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+EMAIL_HOST = 'smtp.hushmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'save2019@hushmail.com'
+EMAIL_HOST_PASSWORD = 'dubhacks2019'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 # Application definition
 
 INSTALLED_APPS = [
