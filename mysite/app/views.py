@@ -1,10 +1,30 @@
 from django.shortcuts import render
-from .forms import loginForm
+from .forms import caseForm
 from .models import Report
 
-
 def index(request):
+    print("Begun reporting")
     return render(request, 'app/index.html')
+
+
+def mockIP():
+    return 12356765435654
+
+
+def getID(Report):
+    return Report.id
+
+
+def confidentiality(request):
+    if request.method == 'POST':
+        print("collecting ip data")
+        report = Report().save()
+        #report.id = getID(report)
+        #client_ip = request.META['REMOTE_ADDR']
+        #lat,long = g.lat_lon(client_ip)
+        print(report.pk)
+        print(report.id)
+    return render(request, 'app/confidentiality.html')
 
 
 def resources(request):
@@ -19,9 +39,18 @@ def emailver(request):
     return render(request, 'app/emailVer.html')
 
 
-def assaultaction(request, assaultType, desc):
+def case(request, pk):
+    report = Report #get_object_or_404(Report, pk=pk)
 
-    return render(request, 'app/assaultAction.html')
+    if request.method == 'POST':
+    #if 'do_something' in request.POST:
+        form = caseForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context= {'form': form}
+
+    return render(request, 'app/case.html', context)
 
 
 def attributecollection(request):
@@ -36,12 +65,8 @@ def attrmatch(request):
     return render(request, 'ATTRMATCH NAME')
 
 
-def login(request, username, password):
+def login(request):
 
-    if request.method == 'POST':
-        form = loginForm(request.POST)
-        if form.is_valid():
-            return render(assaultaction(request))
 
     return render(request, 'app/login.html')
 

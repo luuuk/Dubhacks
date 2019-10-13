@@ -6,7 +6,8 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="/" method="post">
+        {% csrf_token %}
         <h1>General information</h1>
         <h4>What type of sexual misconduct/assault?<span>*</span></h4>
         <select>
@@ -24,7 +25,7 @@
           <option value="11">Attempted Non-Consensual Kissing</option>
           <option value="12">Non-Consensual Touching</option>
           <option value="13">Attempted Non-Consensual Penetration</option>
-          <option value="14">Non-Consensual Penetration</option>
+          <option value="14">Non-Consensual Touching</option>
         </select>
         <label for="Date of Occurrence">Date of Occurrence:</label>
         <input type="month" id="start" name="start"

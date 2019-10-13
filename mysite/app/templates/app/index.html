@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="index.css">
 
 
 <body>
@@ -21,21 +20,19 @@
 
   </div>
 
-  <!-- Navbar on small screens --
+  <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="/resources" class="w3-bar-item w3-button w3-padding-large">Resources</a>
 
   </div>
 </div>
 
-<!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>SAVE</h1>
       <h1>Empowering Through Numbers</h1>
       <h5 class="w3-padding-32">Our mission is to empower sexual assault victims/survivors by providing a confidential, unofficial reporting service that notifies them if another user has also experienced sexual harassment from the same perpetrator... [TBF] </h5>
-      <!--<p class="w3-text-grey">Confidentiality Details</p>// -->
     </div>
 
     <div class="w3-third w3-center">
@@ -47,11 +44,24 @@
 <!-- Header -->
 <header class="w3-container w3-deep-purple w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Click Below to Start a Report</h1>
-  <input type="checkbox" onclick="myFunction(this.form)" name="Agreement" value="agree"> I Agree to the Terms and Conditions</input>
-
-  <button onclick = "window.location.href = '/resources';" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Begin</button>
-</header>
-
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" formaction="confidentiality">Begin</button>
+  </form>
+  </header>
+  <style>
+  .button {
+  background-color: #DCDCDC;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 2px;
+  }
+  </style>
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
@@ -73,6 +83,5 @@ function isCheckFiring(form) {
     }
 }
 </SCRIPT>
-
 </body>
 </html>
