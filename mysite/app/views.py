@@ -78,7 +78,12 @@ def login(request):
 
 
 def match(request):
-    return render(request, 'app/match.html')
+    allReports = Report.objects.all()
+    thisReport = allReports[len(allReports) - 1]
+
+    numMatches = thisReport.checkMatchSimple()
+
+    return render(request, 'app/match.html', {'Matches':numMatches})
 
 def case(request):
     return render(request, 'app/case.html')

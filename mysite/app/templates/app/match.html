@@ -6,8 +6,11 @@
   </head>
   <body>
     <section id="loginBox">
+		{% if Matches %}
     	<h2>Thank you for sharing. We have searched our database and found another report matching your description.</h2>
-
+		{% else %}
+		<h2>Thank you for sharing. We haven't found any matches yet, but we can keep you updated.</h2>
+		{% endif %}
     	<form method="post" class="minimal">
     		<label for="username">
     			UW Net ID:
@@ -17,7 +20,8 @@
     			Password:
     			<input type="password" name="password" id="password"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
     		</label><br>
-    		<button type="submit" class="btn-minimal">Authenticate</button>
+    		<button type="submit" formaction="/resourcesT" class="btn-minimal">Authenticate</button>
+			<button type="submit" formaction="/resourcesT">Redirect</button>
     	</form>
     </section>
   </body>
