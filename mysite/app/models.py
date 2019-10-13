@@ -4,7 +4,7 @@ from django.db import models
 
 class Report(models.Model):
     DEFAULT = 50
-    id = models.IntegerField(primary_key=False, )
+    id = models.IntegerField(primary_key=False)
     uwnetid = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     last_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
