@@ -29,7 +29,7 @@ def case(request):
         report = Report()
         print(report.id)
         print("collecting ip data for form")
-        print(form.id)
+        #print(form.id)
         #request.session['id'] = form.id
         form.ipAddr = mockIP()
 
@@ -71,15 +71,6 @@ def questions(request):
 
 def emailver(request):
     return render(request, 'app/emailVer.html')
-
-
-def advisorconnect(request):
-    return render(request, 'ADCONNECT NAME')
-
-
-def attrmatch(request):
-    return render(request, 'ATTRMATCH NAME')
-
 
 def login(request):
     return render(request, 'app/login.html')
