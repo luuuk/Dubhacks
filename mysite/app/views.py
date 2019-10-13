@@ -46,3 +46,5 @@ def login(request):
 def match(request):
     return render(request, 'app/match.html')
 
+def case(request):
+    return render(request, 'app/case.html')

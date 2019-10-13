@@ -14,6 +14,7 @@ urlpatterns = [
     path('advisorConnect', views.advisorconnect, name='Connect with an Advisor'),
 
     path('login', views.login, name='Login'),
-    path('match', views.match, name='Match')
+    path('match', views.match, name='Match'),
+    path('case', views.case, name='Case'),
 
 ]
