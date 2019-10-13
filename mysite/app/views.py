@@ -26,15 +26,19 @@ def confidentiality(request):
 
 
 def resources(request):
+    print ("received to resources")
     return render(request, 'app/resources.html')
 
 def resourcesT(request):
+    print("Received request to resourcesT")
 
+    """
     send_mail('This is a test',
               'Im watching you...',
               'save2019@hushmail.com',
               ['serenagilani@comcast.net'],
               fail_silently=False)
+    """
     return render(request, 'app/resources.html', {'submitted': 'TRUE'})
 
 
