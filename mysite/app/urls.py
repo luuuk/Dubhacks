@@ -12,6 +12,8 @@ urlpatterns = [
     path('attributes', views.attributecollection, name='Perpetrator Details'),
     path('attrMatch', views.attrmatch, name='Perpetrator Match'),
     path('advisorConnect', views.advisorconnect, name='Connect with an Advisor'),
+
     path('login', views.login, name='Login'),
+    path('match', views.match, name='Match')
 
 ]

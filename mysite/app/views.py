@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import loginForm
 
 
 def index(request):
@@ -32,6 +33,16 @@ def advisorconnect(request):
 def attrmatch(request):
     return render(request, 'ATTRMATCH NAME')
 
+
 def login(request):
+    if request.method == 'POST':
+        form = loginForm(request.POST)
+        if form.is_valid():
+            return render(assaultaction(request))
+
     return render(request, 'app/login.html')
+
+
+def match(request):
+    return render(request, 'app/match.html')
 
