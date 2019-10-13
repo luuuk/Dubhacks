@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import loginForm
+from .models import Report
 
 
 def index(request):
@@ -18,7 +19,8 @@ def emailver(request):
     return render(request, 'app/emailVer.html')
 
 
-def assaultaction(request):
+def assaultaction(request, assaultType, desc):
+
     return render(request, 'app/assaultAction.html')
 
 
@@ -34,7 +36,8 @@ def attrmatch(request):
     return render(request, 'ATTRMATCH NAME')
 
 
-def login(request):
+def login(request, username, password):
+
     if request.method == 'POST':
         form = loginForm(request.POST)
         if form.is_valid():
