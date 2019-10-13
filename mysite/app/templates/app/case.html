@@ -3,70 +3,37 @@
   <head>
     <title>General Information</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="case.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body>
-  <header>
-      <div class="w3-top">
-  <div class="w3-bar w3-deep-purple w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-deep-purple" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="/resources" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resources</a>
-
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="/resources" class="w3-bar-item w3-button w3-padding-large">Resources</a>
-
-  </div>
-</div>
-  </header>
     <div class="testbox">
       <form action="/">
-        <h1>Bank Customer Feedback Form</h1>
-        <h4>Type of Feedback<span>*</span></h4>
+        <h1>General information</h1>
+        <h4>What type of sexual misconduct/assault?<span>*</span></h4>
         <select>
           <option value=""></option>
-          <option value="">Enquiry</option>
-          <option value="2">Complaint</option>
-          <option value="3">Compliment</option>
-          <option value="4">Suggestion</option>
+          <option value="">Staring/Leering</option>
+          <option value="2">Comments/Gestures: Asking Personal Questions</option>
+          <option value="3">Comments/Gestures: Comments about appearance</option>
+          <option value="4">Comments/Gestures: Flirting</option>
+          <option value="5">Comments/Gestures: Explicit Gestures or Comments</option>
+          <option value="6">Indecent Photography Without Consent</option>
+          <option value="7">Indecent Unsolicited Content</option>
+          <option value="8">Verbal Threat of Sexual Assault</option>
+          <option value="9">Attempted Non-Consensual Touching</option>
+          <option value="10">Non-Consensual Touching</option>
+          <option value="11">Attempted Non-Consensual Kissing</option>
+          <option value="12">Non-Consensual Touching</option>
+          <option value="13">Attempted Non-Consensual Penetration</option>
+          <option value="14">Non-Consensual Touching</option>
         </select>
-        <h4>Feedback/Enquiry on<span>*</span></h4>
-        <select>
-          <option value=""></option>
-          <option value="1">Credit and Debit Cards</option>
-          <option value="2">Deposit</option>
-          <option value="3">Housing and Renovation Loan</option>
-          <option value="4">iBanking</option>
-          <option value="5">Treasures</option>
-        </select>
-        <h4>Name<span>*</span></h4>
-        <div class="title-block">
-          <select>
-            <option value="title" selected>Title</option>
-            <option value="ms">Ms</option>
-            <option value="miss">Miss</option>
-            <option value="mrs">Mrs</option>
-            <option value="mr">Mr</option>
-          </select>
-          <input class="name" type="text" name="name" placeholder="First" />
-          <input class="name" type="text" name="name" placeholder="Last" />
-        </div>
-        <h4>Email Address<span>*</span></h4>
-        <input type="text" name="name" />
-        <h4>Contact Number<span>*</span></h4>
-        <input type="text" name="name"/>
-        <h4>Name of Staff who served me</h4>
-        <input type="text" name="name"/>
-        <h4>Branch visited</h4>
-        <input type="text" name="name"/>
-        <h4>Feedback/Enquiry</h4>
-        <p class="small">Please do not indicate your account or credit card number and banking instruction in your comments. Thank you for your time and valuable feedback.</small>
+        <label for="Date of Occurrence">Date of Occurrence:</label>
+        <input type="month" id="start" name="start"
+       min="2000-01" value="2019-10">
+        <h4>Additional information</h4>
+        <p class="small">Use this space to input any additional details.</p>
           <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" href="/">Send Feedback</button>
+          <button type="submit" href="/">Continue</button>
         </div>
       </form>
     </div>
@@ -76,10 +43,10 @@
     }
     body, div, form, input, select {
     padding: 0;
-    margin: 0;
+    margin: 10px;
     outline: none;
     font-family: Roboto, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: #666;
     line-height: 22px;
     }
@@ -95,7 +62,7 @@
     color: red;
     }
     .small {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 18px;
     }
     .testbox {
