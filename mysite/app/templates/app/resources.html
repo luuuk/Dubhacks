@@ -16,7 +16,7 @@
 <div class="w3-top">
   <div class="w3-bar w3-deep-purple w3-card w3-center-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-deep-purple" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="/resources" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resources</a>
 
   </div>
@@ -31,8 +31,10 @@
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
+      {% if submitted %}
       <h1>Thank you for submiting your confidential report!</h1>
-      <p class="w3-padding-32"><b>Look more resources at the University of Washington's Sexual Assault
+      {% endif %}
+        <p class="w3-padding-32"><b>Look more resources at the University of Washington's Sexual Assault
         Resources:</b><br><br>
          <a href="https://www.washington.edu/sexualassault/" target="_blank">www.washington.edu/sexualassault</a>
       </p>

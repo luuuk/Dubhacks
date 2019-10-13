@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     # /resources
     path('resources', views.resources, name='resources'),
+    path('resourcesT', views.resourcesT, name='resources'),
     path('fileareport', views.questions, name='Info'),
     path('signin', views.emailver, name='Verify Email'),
     path('confidentiality', views.confidentiality, name='Conf'),
