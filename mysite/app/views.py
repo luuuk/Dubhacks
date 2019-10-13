@@ -58,8 +58,8 @@ def resourcesT(request):
     single = reps[len(reps) - 3]
     try:
         address = single.uwnetid + "@uw.edu"
-        send_mail('This is a test',
-                  'Im watching you...',
+        send_mail('Hi there, this email is to notify you of an update related to your SAVE report',
+                  'Please visit http://127.0.0.1:8080/',
                   'save2019@hushmail.com',
                   [address],
                   fail_silently=False)
