@@ -88,3 +88,6 @@ def confidentiality(request):
 
 def attrCol(request):
     return render(request, 'app/attrCol.html')
+
+def noMatch(request):
+    return render(request, 'app/noMatch.html')

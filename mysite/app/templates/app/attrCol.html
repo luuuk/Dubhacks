@@ -1,10 +1,14 @@
-  <!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<!DOCTYPE html>
   <html>
     <head>
       <title>Attribute Collection</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
     </head>
-    <body>
+    <body id="class">
       <div class="testbox">
         <form action="/">
           <h1>Attribute Collection</h1>
@@ -19,26 +23,28 @@
               <textarea rows="1" placeholder="Phone Number" class="text"></textarea>
           <h3>Physical Characteristics:</h3>
           <h4>Gender:</h4>
-          <select>
+          <select class="text">
             <option value=""></option>
             <option value="">Male</option>
             <option value="2">Female</option>
             <option value="3">Other</option>
           </select>
           <h4>Height:</h4>
-          <select>
+          <select class="text">
             <option value="" ></option>
-            <option value="">5.0</option>
-            <option value="2">5.3-5.5</option>
-            <option value="3">5.6-5.8</option>
-            <option value="4">5.9-6.1</option>
-            <option value="5">6.2-6.4</option>
-            <option value="6">6.5-6.7</option>
-            <option value="7">6.9-7.1</option>
-            <option value="8">7+</option>
+            <option value="">4'11"-</option>
+            <option value="">5'0" - 5'2"</option>
+            <option value="2">5'3"- 5'5"</option>
+            <option value="3">5'6" - 5'8"</option>
+            <option value="4">5'9" - 6'1"</option>
+            <option value="5">6'2" - 6'4"</option>
+            <option value="6">6'5" - 6"7</option>
+            <option value="7">6'8" - 6'10"</option>
+            <option value="">6'11" - 7'0"</option>
+            <option value="8">7'1"+</option>
           </select>
           <h4>Eye Color:</h4>
-          <select>
+          <select class="text">
             <option value=""></option>
             <option value="">Black</option>
             <option value="2">Green</option>
@@ -46,7 +52,7 @@
             <option value="4">Brown</option>
           </select>
           <h4>Hair Color:</h4>
-          <select>
+          <select class="text">
             <option value=""></option>
             <option value="">Black</option>
             <option value="2">Brown</option>
@@ -55,7 +61,7 @@
             <option value="4">Light Blonde</option>
           </select>
           <h4>Ethnicity:</h4>
-          <select>
+          <select class="text">
             <option value=""></option>
             <option value="">American Indian or Alaskan Native</option>
             <option value="2">Asian or Pacific Islander</option>
@@ -64,169 +70,11 @@
             <option value="4">Hispanic</option>
           </select>
           <form>
+            <br><br>
             <!-- This is a decision -->
               <button type="submit" formaction=".html">Submit</button>
           </form>
         </form>
-      </div>
-      <style>
-      html, body {
-      min-height: 100%;
-      background-color: rgb(127,0,255);
-      }
-      .text{
-        width: auto;
-      }
-      body, div, form, input, select {
-      padding: 0;
-      margin: 10px;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 18px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1, h4 {
-      margin: 15px 0 4px;
-      font-weight: 400;
-      }
-      h4 {
-      margin: 20px 0 4px;
-      font-weight: 400;
-      }
-      span {
-      color: red;
-      }
-      .small {
-      font-size: 12px;
-      line-height: 18px;
-      }
-      .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 3px;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 2px 5px #ccc;
-      }
-      input {
-      width: auto;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      vertical-align: middle;
-      }
-      input:hover, textarea:hover, select:hover {
-      outline: none;
-      border: 1px solid #095484;
-      background: #e6eef7;
-      }
-      .title-block select, .title-block input {
-      margin-bottom: 10px;
-      }
-      select {
-      padding: 7px 0;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      background: transparent;
-      }
-
-      select, table {
-      width: 100%;
-      }
-      option {
-      background: #fff;
-      }
-      .day-visited, .time-visited {
-      position: relative;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      input[type="time"]::-webkit-inner-spin-button {
-      margin: 2px 22px 0 0;
-      }
-      .day-visited i, .time-visited i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      top: 8px;
-      font-size: 20px;
-      }
-      .day-visited i, .time-visited i {
-      right: 5px;
-      z-index: 1;
-      color: #a9a9a9;
-      }
-      [type="date"]::-webkit-calendar-picker-indicator {
-      right: 0;
-      z-index: 2;
-      opacity: 0;
-      }
-      .question-answer label {
-      display: block;
-      padding: 0 20px 10px 0;
-      }
-      .question-answer input {
-      width: auto;
-      margin-top: -2px;
-      }
-      th, td {
-      width: 18%;
-      padding: 15px 0;
-      border-bottom: 1px solid #ccc;
-      text-align: center;
-      vertical-align: unset;
-      line-height: 18px;
-      font-weight: 400;
-      word-break: break-all;
-      }
-      .first-col {
-      width: 25%;
-      text-align: left;
-      }
-      textarea {
-      width: calc(100% - 6px);
-      }
-      .btn-block {
-      margin-top: 20px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      background-color: #095484;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background-color: #0666a3;
-      }
-      @media (min-width: 568px) {
-      .title-block {
-      display: flex;
-      justify-content: space-between;
-      }
-      .title-block select {
-      width: 30%;
-      margin-bottom: 0;
-      }
-      .title-block input {
-      width: 31%;
-      margin-bottom: 0;
-      }
-      th, td {
-      word-break: keep-all;
-      }
-      }
-      </style>
+      </div>s
     </body>
   </html>
