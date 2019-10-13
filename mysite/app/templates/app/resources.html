@@ -1,14 +1,98 @@
-{% extends "app/templates/base.html" %}
-
 <!DOCTYPE html>
 <html lang="en">
-{% block content %}
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+<title>SAVE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="index.css">
+
+
 <body>
 
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-deep-purple w3-card w3-center-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-deep-purple" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/resources" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resources</a>
+
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/resources" class="w3-bar-item w3-button w3-padding-large">Resources</a>
+
+  </div>
+</div>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Thank you for submiting your confidential report!</h1>
+      <p class="w3-padding-32"><b>Look more resources at the University of Washinton's Sexual Assault
+        Resources:</b><br><br>
+         <a href="https://www.washington.edu/sexualassault/" target="_blank">www.washington.edu/sexualassault</a>
+      </p>
+      <p class="w3-padding-32">
+        More resources:<br>
+            Seattle Police Department <a href="https://www.seattle.gov/police/need-help/sexual-assault" target="_blank">
+            Seattle.gov/police/need-help/sexual-assault</a><br>
+            Callisto, survivors to survivors <a href="https://www.projectcallisto.org" target="_blank">Projectcallisto.org</a><br>
+            RAINN (Rape, Abuse & Incest National Network) <a href="https://www.rainn.org/about-rainn" target="_blank">Rainn.org</a>
+    </div>
+
+    <div class="w3-third w3-center">
+      <p style="text-align: center">“You’re not a victim for sharing your story. You are a survivor setting the world on fire
+        with your truth. You never know who needs your light, your warmth and raging courage.” - Alex Elle</p>
+        <iframe width="500" height="315" align="left" src="https://www.youtube.com/embed/029ahSNog8M" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-deep-purple w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Click Below to Start a Report</h1>
+  <form>
+    <button type="submit" formaction="confidentiality.html">Begin</button>
+  </form>
+  </header>
+  <style>
+  .button {
+  background-color: #DCDCDC;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 2px;
+  }
+  </style>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+function isCheckFiring(form) {
+    if (form.checkThis.checked) {
+        alert("The box is checked.")
+    } else {
+        alert("The box is not checked at the moment.")
+    }
+}
+</SCRIPT>
 </body>
-{% endblock %}
 </html>
