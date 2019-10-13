@@ -6,6 +6,7 @@
   </head>
     <div class="testbox">
       <form action="/">
+          {% csrf_token %}
         <h1>Confidentiality Agreement</h1>
           <br><br>
             <h4>All information that you submit in the report will be confidential.
@@ -19,22 +20,20 @@
             <head>
             <script>
               function activateButton(element) {
-
                   if(element.checked) {
-                    document.getElementById("continue").disabled = false;
+                    document.getElementById("submit").disabled = false;
                    }
                    else  {
                     document.getElementById("submit").disabled = true;
                   }
-
               }
             </script>
             </head>
 
-            <body onload="disableSubmit()">
+            <body>
              <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I Acknowledge the Confidentiality Agreement
             <br><br>
-              <input type="submit" name="submit" id="submit">
+              <input type="submit" name="submit" id="submit" formaction="case" formmethod="post">
             </body>
 
       </form>
