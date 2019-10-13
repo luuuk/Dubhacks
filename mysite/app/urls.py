@@ -15,5 +15,6 @@ urlpatterns = [
     path('login', views.login, name='Login'),
     path('match', views.match, name='Match'),
     path('case', views.case, name='Case'),
+    path('confidentiality', views.confidentiality, name='Confidentiality'),
 
 ]

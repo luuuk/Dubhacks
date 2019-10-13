@@ -51,3 +51,6 @@ def match(request):
 
 def case(request):
     return render(request, 'app/case.html')
+
+def confidentiality(request):
+    return render(request, 'app/confidentiality.html')
