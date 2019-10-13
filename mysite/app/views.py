@@ -83,7 +83,10 @@ def match(request):
 
     numMatches = thisReport.checkMatchSimple()
 
-    return render(request, 'app/match.html', {'Matches':numMatches})
+    if (numMatches):
+        return render(request, 'app/match.html', {'Matches':numMatches})
+    else:
+        return render(request, 'app/nomatch.html')
 
 def case(request):
     return render(request, 'app/case.html')
