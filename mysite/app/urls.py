@@ -16,6 +16,8 @@ urlpatterns = [
     path('advisorConnect', views.advisorconnect, name='Connect with an Advisor'),
     path('login', views.login, name='Login'),
     path('match', views.match, name='Match'),
+    path('noMatch', views.noMatch, name='No Match'),
     path('attrCol', views.attrCol, name="AttrCol"),
+
 
 ]
