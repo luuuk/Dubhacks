@@ -1,28 +1,193 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SAVE Match</title>
-    <link href="login.css" rel="stylesheet">
+    <title>Match</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
-    <section id="loginBox">
-		{% if Matches %}
-    	<h2>Thank you for sharing. We have searched our database and found another report matching your description.</h2>
-		{% else %}
-		<h2>Thank you for sharing. We haven't found any matches yet, but we can keep you updated.</h2>
-		{% endif %}
-    	<form method="post" class="minimal">
-    		<label for="username">
-    			UW Net ID:
-    			<input type="text" name="username" id="username"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
-    		</label><br>
-    		<label for="password">
-    			Password:
-    			<input type="password" name="password" id="password"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
-    		</label><br>
-    		<button type="submit" formaction="/resourcesT" class="btn-minimal">Authenticate</button>
-			<button type="submit" formaction="/resourcesT">Redirect</button>
-    	</form>
-    </section>
+    <div class="testbox">
+      <form action="/">
+        <h1>Other people have also had a problematic experience with this person.</h1><br>
+        <p>
+          If you choose to follow up, a UW campus safety advocate will reach out to you to talk about
+          your options, including connecting with the other user if they also choose to follow up.
+          Campus safety advocates are professionals who will provide you with information and guidance
+          on deciding how to move forward, if you choose. You can find out more about campus safety
+          advocates at the button below:
+        </p>
+              <button type="submit" formaction="resources.html">Resources</button><br>
+        <p>
+          Be aware that the campus safety advocates will receive no information from our databases
+          except your email address, with which to contact you, and the contact information of the
+          other user, if they choose to follow up as well.
+          We encourage you to follow up, because by getting in touch with a campus safety advocate,
+          you are not required to move forward with any action. Instead, it is an opportunity to learn
+          about your options and other helpful resources.
+        </p>
+        <h4>Do you want to follow up?</h4>
+        <select>
+          <option value=""></option>
+          <option value="">Yes</option>
+          <option value="2">No</option>
+        </select><br><br>
+            <button type="submit" formaction="resources.html">Submit</button>
+      </form>
+    </div>
+    <style>
+    html, body {
+    min-height: 100%;
+    background-color: rgb(127,0,255);
+    }
+    body, div, form, input, select {
+    padding: 0;
+    margin: 10px;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    color: #666;
+    line-height: 22px;
+    }
+    h1, h4 {
+    margin: 15px 0 4px;
+    font-weight: 400;
+    }
+    h4 {
+    margin: 20px 0 4px;
+    font-weight: 400;
+    }
+    span {
+    color: red;
+    }
+    .small {
+    font-size: 12px;
+    line-height: 18px;
+    }
+    .testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+    }
+    form {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc;
+    }
+    input {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+    }
+    input:hover, textarea:hover, select:hover {
+    outline: none;
+    border: 1px solid #095484;
+    background: #e6eef7;
+    }
+    .title-block select, .title-block input {
+    margin-bottom: 10px;
+    }
+    select {
+    padding: 7px 0;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: transparent;
+    }
+    select, table {
+    width: 100%;
+    }
+    option {
+    background: #fff;
+    }
+    .day-visited, .time-visited {
+    position: relative;
+    }
+    input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    }
+    input[type="time"]::-webkit-inner-spin-button {
+    margin: 2px 22px 0 0;
+    }
+    .day-visited i, .time-visited i, input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 8px;
+    font-size: 20px;
+    }
+    .day-visited i, .time-visited i {
+    right: 5px;
+    z-index: 1;
+    color: #a9a9a9;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    }
+    .question-answer label {
+    display: block;
+    padding: 0 20px 10px 0;
+    }
+    .question-answer input {
+    width: auto;
+    margin-top: -2px;
+    }
+    th, td {
+    width: 18%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    vertical-align: unset;
+    line-height: 18px;
+    font-weight: 400;
+    word-break: break-all;
+    }
+    .first-col {
+    width: 25%;
+    text-align: left;
+    }
+    textarea {
+    width: calc(100% - 6px);
+    }
+    .btn-block {
+    margin-top: 20px;
+    text-align: center;
+    }
+    button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #095484;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    }
+    button:hover {
+    background-color: #0666a3;
+    }
+    @media (min-width: 568px) {
+    .title-block {
+    display: flex;
+    justify-content: space-between;
+    }
+    .title-block select {
+    width: 30%;
+    margin-bottom: 0;
+    }
+    .title-block input {
+    width: 31%;
+    margin-bottom: 0;
+    }
+    th, td {
+    word-break: keep-all;
+    }
+    }
+    </style>
   </body>
 </html>

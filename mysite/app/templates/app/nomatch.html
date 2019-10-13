@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>General Information</title>
+    <title>Match</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
     <div class="testbox">
-      <form action="/" method="post">
-        {% csrf_token %}
-        <h1>General information</h1>
-        <h4>What type of sexual misconduct/assault?<span>*</span></h4>
-        <select>
-          <option value=""></option>
-          <option value="">Staring/Leering</option>
-          <option value="2">Comments/Gestures: Asking Personal Questions</option>
-          <option value="3">Comments/Gestures: Comments about appearance</option>
-          <option value="4">Comments/Gestures: Flirting</option>
-          <option value="5">Comments/Gestures: Explicit Gestures or Comments</option>
-          <option value="6">Indecent Photography Without Consent</option>
-          <option value="7">Indecent Unsolicited Content</option>
-          <option value="8">Verbal Threat of Sexual Assault</option>
-          <option value="9">Attempted Non-Consensual Touching</option>
-          <option value="10">Non-Consensual Touching</option>
-          <option value="11">Attempted Non-Consensual Kissing</option>
-          <option value="12">Non-Consensual Kissing</option>
-          <option value="13">Attempted Non-Consensual Penetration</option>
-          <option value="14">Non-Consensual Penetration</option>
-        </select>
-        <label for="Date of Occurrence">Date of Occurrence:</label>
-        <input type="month" id="start" name="start"
-       min="2000-01" value="2019-10">
-        <h4>Additional information</h4>
-        <p class="small">Use this space to input any additional details.</p>
-          <textarea rows="5"></textarea>
-        <div class="btn-block">
-          <button type="submit" formaction="/attributes" formmethod="post">Continue</button>
-        </div>
+      <form action="/">
+        <h1>At this time, we do not have any other documented cases of issues with <br><br> the same perpetrator.</h1><br>
+        <p>
+          However, if another user submits a report about the same perpetrator, we will contact you
+          to let you know. At that time, you will be given the option to follow up, in which case a
+          campus safety advocate will reach out to you for support in learning about resources and
+          options for moving forward, if you are interested.
+        </p><br>
+          <h3>Click the button below to find resources:</h3><br>
+              <button type="submit" formaction="resources.html">Resources</button>
       </form>
     </div>
     <style>
@@ -53,7 +34,7 @@
     line-height: 22px;
     }
     h1, h4 {
-    margin: 15px 0 4px;
+    margin: 20px 3px 10px;
     font-weight: 400;
     }
     h4 {

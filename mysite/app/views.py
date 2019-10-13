@@ -90,3 +90,6 @@ def case(request):
 
 def confidentiality(request):
     return render(request, 'app/confidentiality.html')
+
+def attrCol(request):
+    return render(request, 'app/attrCol.html')
