@@ -27,10 +27,11 @@ def case(request):
     form = agreeToTermsForm(request.POST or None, initial=initial)
     if request.method == 'POST':
         report = form.save(commit=False)
+        report.save()
         print(report.id)
         print("collecting ip data for form")
-        print(form.id)
-        request.session['id'] = form.id
+        #print(form.id)
+        #request.session['id'] = form.id
 
         return render(request, 'app/case.html')
     return render(request, 'app/case.html', {'form': form})
@@ -47,7 +48,7 @@ def attributecollection(request):
 
 
 def resources(request):
-    print ("received to resources")
+    print("received to resources")
     return render(request, 'app/resources.html')
 
 
@@ -77,11 +78,13 @@ def login(request):
 
 def match(request):
     allReports = Report.objects.all()
-    thisReport = allReports[len(allReports) - 1]
+    numMatches = 0
+    if allReports.count() > 0:
+        thisReport = allReports[len(allReports) - 1]
+        numMatches = thisReport.checkMatchSimple()
 
-    numMatches = thisReport.checkMatchSimple()
 
     if (numMatches):
         return render(request, 'app/match.html', {'Matches':numMatches})
     else:
-        return render(request, 'app/nomatch.html')
+        return render(request, 'app/match.html')
