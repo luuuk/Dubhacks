@@ -35,7 +35,7 @@ class Report(models.Model):
         for prev in allReports:
             if (compare(self.last_name, prev.last_name) and compare(self.first_name, prev.first_name)) or compare(
                     self.ig_acc, prev.ig_acc) or compare(self.phone_num, prev.phone_num):
-                matches.add(prev)
+                matches.append(prev)
 
         return len(matches)
 
@@ -44,7 +44,7 @@ class Report(models.Model):
         matches = []
         for prev in allReports:
             if ((self.last_name and prev.last_name) and (self.last_name.casefold() == prev.last_name.casefold())):
-                matches.add(prev)
+                matches.append(prev)
 
-        return len(matches - 1)
+        return len(matches) - 1
 
