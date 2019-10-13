@@ -4,6 +4,7 @@ html, body {
       }
       .text{
         width: 24%;
+        font-size: 14px;
       }
       body, div, form, input, select {
       padding: 0;
