@@ -25,14 +25,7 @@ def confidentiality(request):
     if request.method == 'POST':
         print("collecting ip data")
         report = Report()
-        print(report.id)
-
-        report.ipAddr = mockIP()
-        report = Report().save()
-        #report.id = getID(report)
-        #client_ip = request.META['REMOTE_ADDR']
-        #lat,long = g.lat_lon(client_ip)
-        print(report.pk)
+        report.save()
         print(report.id)
     return render(request, 'app/confidentiality.html')
 
