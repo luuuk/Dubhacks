@@ -48,11 +48,10 @@ def emailver(request):
     return render(request, 'app/emailVer.html')
 
 
-def case(request, pk):
-    report = Report #get_object_or_404(Report, pk=pk)
+def case(request):
+    report = Report
 
     if request.method == 'POST':
-    #if 'do_something' in request.POST:
         form = caseForm(request.POST)
         if form.is_valid():
             form.save()
