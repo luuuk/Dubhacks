@@ -16,7 +16,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-deep-purple w3-card w3-left-align w3-large">
+  <div class="w3-bar w3-deep-purple w3-card w3-center-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-deep-purple" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="/resources" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resources</a>
@@ -49,7 +49,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Header -->
 <header class="w3-container w3-deep-purple w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Click Below to Start a Report</h1>
-  <button  onclick="window.location.href = '/resources" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Begin</button>
+  <input type="checkbox" onclick="myFunction(this.form)" name="Agreement" value="agree"> I Agree to the Terms and Conditions</input>
+
+  <button onclick = "window.location.href = '/resources';" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Begin</button>
 </header>
 
 <script>
@@ -63,6 +65,16 @@ function myFunction() {
   }
 }
 </script>
+
+<SCRIPT LANGUAGE="JavaScript">
+function isCheckFiring(form) {
+    if (form.checkThis.checked) {
+        alert("The box is checked.")
+    } else {
+        alert("The box is not checked at the moment.")
+    }
+}
+</SCRIPT>
 
 </body>
 </html>
