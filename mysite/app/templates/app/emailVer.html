@@ -1,4 +1,8 @@
+{% extends index.html %}
+
+
 <!DOCTYPE html>
+{% block main_body %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,4 +11,7 @@
 <body>
 
 </body>
+
+{{ block.super }}
+{% endblock main_body %}
 </html>

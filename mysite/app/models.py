@@ -19,4 +19,6 @@ class Report(models.Model):
     phone_num = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     snap_acc = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
 
+    def __str__(self):
+        return uwnetid if uwnetid else 'Anonymous'
 
