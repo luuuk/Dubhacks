@@ -11,14 +11,19 @@ def mockIP():
     return 12356765435654
 
 
+def getID(Report):
+    return Report.id
+
+
 def confidentiality(request):
     if request.method == 'POST':
         print("collecting ip data")
-        report = Report()
-        report.ipAddr = mockIP()
+        report = Report().save()
+        #report.id = getID(report)
         #client_ip = request.META['REMOTE_ADDR']
         #lat,long = g.lat_lon(client_ip)
-        print(report.ipAddr)
+        print(report.pk)
+        print(report.id)
     return render(request, 'app/confidentiality.html')
 
 
