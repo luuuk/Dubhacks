@@ -10,7 +10,8 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="post">
+          {% csrf_token %}
         <h1>Other people have also had a problematic experience with this person.</h1><br>
         <p>
           If you choose to follow up, a UW confidential advocate will reach out to you to talk about
@@ -28,13 +29,13 @@
           you are not required to move forward with any action. Rather, it is an opportunity to learn
           about your options and other helpful resources.
         </p>
-        <h4>Do you want to follow up?</h4>
+        <h4>Would you like to follow up?</h4>
         <select>
           <option value=""></option>
           <option value="">Yes</option>
           <option value="2">No</option>
         </select><br><br>
-            <button type="submit" formaction="resources.html">Submit</button>
+            <button type="submit" formaction="resourcesT">Submit</button>
       </form>
     </div>
   </body>

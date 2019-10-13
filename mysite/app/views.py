@@ -26,15 +26,19 @@ def confidentiality(request):
 
 
 def resources(request):
+    print ("received to resources")
     return render(request, 'app/resources.html')
 
 def resourcesT(request):
+    print("Received request to resourcesT")
 
+    """
     send_mail('This is a test',
               'Im watching you...',
               'save2019@hushmail.com',
               ['serenagilani@comcast.net'],
               fail_silently=False)
+    """
     return render(request, 'app/resources.html', {'submitted': 'TRUE'})
 
 
@@ -72,22 +76,16 @@ def attrmatch(request):
 
 
 def login(request):
-
-
     return render(request, 'app/login.html')
 
 
 def match(request):
-    return render(request, 'app/match.html')
+    allReports = Report.objects.all()
+    thisReport = allReports[len(allReports) - 1]
 
-def case(request):
-    return render(request, 'app/case.html')
+    numMatches = thisReport.checkMatchSimple()
 
-def confidentiality(request):
-    return render(request, 'app/confidentiality.html')
-
-def attrCol(request):
-    return render(request, 'app/attrCol.html')
-
-def noMatch(request):
-    return render(request, 'app/noMatch.html')
+    if (numMatches):
+        return render(request, 'app/match.html', {'Matches':numMatches})
+    else:
+        return render(request, 'app/nomatch.html')
