@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import caseForm
 from .models import Report
 
@@ -19,12 +19,16 @@ def emailver(request):
     return render(request, 'app/emailVer.html')
 
 
-def assaultaction(request):
-    form= caseForm(request.POST or None)
-    if 'do_something' in request.POST:
-        form.save()
+def case(request, pk):
+    report = Report #get_object_or_404(Report, pk=pk)
 
-    context= {'form': form }
+    if request.method == 'POST':
+    #if 'do_something' in request.POST:
+        form = caseForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context= {'form': form}
 
     return render(request, 'app/case.html', context)
 
