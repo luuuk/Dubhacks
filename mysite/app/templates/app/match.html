@@ -12,7 +12,11 @@
     <div class="testbox">
       <form action="post">
           {% csrf_token %}
+        {% if Matches %}
         <h1>Other people have also had a problematic experience with this person.</h1><br>
+        {% else %}
+        <h1>We haven't found any matches yet, but we can keep you posted.</h1><br>
+        {% endif %}
         <p>
           If you choose to follow up, a UW confidential advocate will reach out to you to talk about
           your options, including connecting with the other user if they also choose to follow up.

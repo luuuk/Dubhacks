@@ -26,12 +26,12 @@ def case(request):
     initial = {'id': request.session.get('id', None)}
     form = agreeToTermsForm(request.POST or None, initial=initial)
     if request.method == 'POST':
-        report = Report()
+        report = form.save(commit=False)
+        report.save()
         print(report.id)
         print("collecting ip data for form")
         #print(form.id)
         #request.session['id'] = form.id
-        form.ipAddr = mockIP()
 
         return render(request, 'app/case.html')
     return render(request, 'app/case.html', {'form': form})
@@ -48,7 +48,7 @@ def attributecollection(request):
 
 
 def resources(request):
-    print ("received to resources")
+    print("received to resources")
     return render(request, 'app/resources.html')
 
 
@@ -72,26 +72,19 @@ def questions(request):
 def emailver(request):
     return render(request, 'app/emailVer.html')
 
-
-def advisorconnect(request):
-    return render(request, 'ADCONNECT NAME')
-
-
-def attrmatch(request):
-    return render(request, 'ATTRMATCH NAME')
-
-
 def login(request):
     return render(request, 'app/login.html')
 
 
 def match(request):
     allReports = Report.objects.all()
-    thisReport = allReports[len(allReports) - 1]
+    numMatches = 0
+    if allReports.count() > 0:
+        thisReport = allReports[len(allReports) - 1]
+        numMatches = thisReport.checkMatchSimple()
 
-    numMatches = thisReport.checkMatchSimple()
 
     if (numMatches):
         return render(request, 'app/match.html', {'Matches':numMatches})
     else:
-        return render(request, 'app/nomatch.html')
+        return render(request, 'app/match.html')
