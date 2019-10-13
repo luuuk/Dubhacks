@@ -13,7 +13,7 @@
         {% csrf_token %}
         <h1>General information</h1>
         <h4>What type of sexual misconduct/assault?<span>*</span></h4>
-        <select>
+        <select for="case_type">
           <option value="">--Select Type of Sexual Harassment--</option>
           <option value="">Staring/Leering</option>
           <option value="2">Comments/Gestures: Asking Personal Questions</option>
@@ -30,12 +30,12 @@
           <option value="13">Attempted Non-Consensual Penetration</option>
           <option value="14">Non-Consensual Penetration</option>
         </select>
-        <label for="Date of Occurrence">Date of Occurrence:</label>
-        <input type="month" id="start" name="start"
+        <label>Date of Occurrence:</label>
+        <input for="id_date" type="month" id="start" name="start"
        min="2000-01" value="YYYY-MM">
         <h4>Additional information</h4>
         <p class="small">Use this space to input any additional details.</p>
-          <textarea rows="5" style="font-size: 14px;"></textarea>
+          <textarea for="id_description" rows="5" style="font-size: 14px;"></textarea>
         <div class="btn-block">
           <button type="submit" formaction="attributes" formmethod="post">Continue</button>
         </div>
