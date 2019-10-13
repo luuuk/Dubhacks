@@ -5,14 +5,6 @@ from .models import Report
 
 def index(request):
     print("Begun reporting")
-    """
-    for i in range(2):
-        send_mail('This is a test',
-        'Im watching you...',
-        'save2019@hushmail.com',
-        ['serenagilani@comcast.net'],
-        fail_silently=False)
-    """
     return render(request, 'app/index.html')
 
 
@@ -37,6 +29,12 @@ def resources(request):
     return render(request, 'app/resources.html')
 
 def resourcesT(request):
+
+    send_mail('This is a test',
+              'Im watching you...',
+              'save2019@hushmail.com',
+              ['serenagilani@comcast.net'],
+              fail_silently=False)
     return render(request, 'app/resources.html', {'submitted': 'TRUE'})
 
 
