@@ -11,4 +11,6 @@ urlpatterns = [
     path('action', views.assaultaction, name='What Happened'),
     path('attributes', views.attributecollection, name='Perpetrator Details'),
     path('attrMatch', views.attrmatch, name='Perpetrator Match'),
+    path('advisorConnect', views.advisorconnect, name='Connect with an Advisor'),
+
 ]

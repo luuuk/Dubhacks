@@ -1,5 +1,3 @@
-from django.http import HttpResponse
-from django.template import loader
 from django.shortcuts import render
 
 
@@ -25,4 +23,12 @@ def assaultaction(request):
 
 def attributecollection(request):
     return render(request, 'app/attrCol.html')
+
+
+def advisorconnect(request):
+    return render(request, 'ADCONNECT NAME')
+
+
+def attrmatch(request):
+    return render(request, 'ATTRMATCH NAME')
 
