@@ -26,12 +26,11 @@ def case(request):
     initial = {'id': request.session.get('id', None)}
     form = agreeToTermsForm(request.POST or None, initial=initial)
     if request.method == 'POST':
-        report = Report()
+        report = form.save(commit=False)
         print(report.id)
         print("collecting ip data for form")
-        #print(form.id)
-        #request.session['id'] = form.id
-        form.ipAddr = mockIP()
+        print(form.id)
+        request.session['id'] = form.id
 
         return render(request, 'app/case.html')
     return render(request, 'app/case.html', {'form': form})
