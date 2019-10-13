@@ -1,18 +1,25 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.mail import send_mail
 from .forms import caseForm
 from .models import Report
 
 
 def index(request):
     print("Begun reporting")
+    for i in range(2):
+        send_mail('This is a test',
+        'Im watching you...',
+        'save2019@hushmail.com',
+        ['serenagilani@comcast.net'],
+        fail_silently=False)
     return render(request, 'app/index.html')
 
 
 def confidentiality(request):
     if request.method == 'POST':
         report = Report()
-        report.ipAddr =
         print(report.id)
+
     return render(request, 'app/confidentiality.html')
 
 
