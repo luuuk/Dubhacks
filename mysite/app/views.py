@@ -4,7 +4,6 @@ from .forms import caseForm, agreeToTermsForm
 from .models import Report
 
 def index(request):
-    print("Begun reporting")
     return render(request, 'app/index.html')
 
 
@@ -27,9 +26,11 @@ def case(request):
     initial = {'id': request.session.get('id', None)}
     form = agreeToTermsForm(request.POST or None, initial=initial)
     if request.method == 'POST':
-        print("collecting ip data for form ")
-        print(form.id)
-        request.session['id'] = form.id
+        report = Report()
+        print(report.id)
+        print("collecting ip data for form")
+        #print(form.id)
+        #request.session['id'] = form.id
         form.ipAddr = mockIP()
 
         return render(request, 'app/case.html')
