@@ -1,8 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.core.mail import send_mail
+from django.shortcuts import render
 from .forms import caseForm
 from .models import Report
-
 
 def index(request):
     print("Begun reporting")
@@ -15,11 +13,20 @@ def index(request):
     return render(request, 'app/index.html')
 
 
+def mockIP():
+    return 12356765435654
+
+
 def confidentiality(request):
     if request.method == 'POST':
+        print("collecting ip data")
         report = Report()
         print(report.id)
 
+        report.ipAddr = mockIP()
+        #client_ip = request.META['REMOTE_ADDR']
+        #lat,long = g.lat_lon(client_ip)
+        print(report.ipAddr)
     return render(request, 'app/confidentiality.html')
 
 
