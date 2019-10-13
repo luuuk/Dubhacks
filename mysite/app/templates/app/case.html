@@ -6,8 +6,7 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/attributes" method="POST">
-        {% csrf_token %}
+      <form action="/" method="post">
         <h1>General information</h1>
         <h4>What type of sexual misconduct/assault?<span>*</span></h4>
         <select>
@@ -25,7 +24,7 @@
           <option value="11">Attempted Non-Consensual Kissing</option>
           <option value="12">Non-Consensual Touching</option>
           <option value="13">Attempted Non-Consensual Penetration</option>
-          <option value="14">Non-Consensual Penetration</option>
+          <option value="14">Non-Consensual Touching</option>
         </select>
         <label for="Date of Occurrence">Date of Occurrence:</label>
         <input type="month" id="start" name="start"
@@ -34,13 +33,11 @@
         <p class="small">Use this space to input any additional details.</p>
           <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" name="do-something" href="/">Continue</button>
+          <button type="submit" href="/">Continue</button>
         </div>
       </form>
     </div>
     <style>
-
-
     html, body {
     min-height: 100%;
     }
