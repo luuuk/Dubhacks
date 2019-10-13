@@ -2,46 +2,51 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
 
+body, html {
+  background-color: #B3C3C2;
+}
+
 .progress-wrapper {
   width: 100%;
-  max-width:670px;
+  max-width: 670px;
   margin: 100px auto;
-  .progress-point {
-    background-color:#E6E6E6;
-    float:left;
-    height:50px;
-    width:50px;
-    border:2px solid #F7F7F7;
-    border-radius: 30px;
-    box-shadow:0 1px 1px #E0E0E0;
-    i {
-      display:none;
-      font-size:28px;
-    }
-    &.wrong {
-      background-color:#F06755;
-      .fa-close {
-        display:block;
-        padding: 12px 14px;
-        color:#444;
-      }
-    }
-    &.right {
-      background-color:#A4C88D;
-      .fa-check {
-        display:block;
-        padding: 12px 11px;
-        color:#444;
-      }
-    }
-  }
-  .progress-waypoint {
-    float:left;
-    width:100px;
-    height:5px;
-    background-color:#FFFFFF;
-    position:relative;
-    top:24px;
-    border-bottom:1px solid #E0E0E0;
-  }
 }
+.progress-wrapper .progress-point {
+  background-color: #E6E6E6;
+  float: left;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #F7F7F7;
+  border-radius: 30px;
+  box-shadow: 0 1px 1px #E0E0E0;
+}
+.progress-wrapper .progress-point i {
+  display: none;
+  font-size: 28px;
+}
+.progress-wrapper .progress-point.wrong {
+  background-color: #F06755;
+}
+.progress-wrapper .progress-point.wrong .fa-close {
+  display: block;
+  padding: 12px 14px;
+  color: #444;
+}
+.progress-wrapper .progress-point.right {
+  background-color: #A4C88D;
+}
+.progress-wrapper .progress-point.right .fa-check {
+  display: block;
+  padding: 12px 11px;
+  color: #444;
+}
+.progress-wrapper .progress-waypoint {
+  float: left;
+  width: 100px;
+  height: 5px;
+  background-color: #FFFFFF;
+  position: relative;
+  top: 24px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
