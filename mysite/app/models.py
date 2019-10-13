@@ -6,6 +6,7 @@ class Report(models.Model):
     DEFAULT = 50
     id = models.AutoField(primary_key=True)
     uwnetid = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
+    ipAddr = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     last_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     case_type = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
@@ -47,4 +48,7 @@ class Report(models.Model):
                 matches.add(prev)
 
         return len(matches - 1)
+
+    def id(self):
+        return self.id
 

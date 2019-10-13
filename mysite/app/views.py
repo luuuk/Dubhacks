@@ -4,7 +4,16 @@ from .models import Report
 
 
 def index(request):
+    print("Begun reporting")
     return render(request, 'app/index.html')
+
+
+def confidentiality(request):
+    if request.method == 'POST':
+        report = Report()
+        report.ipAddr =
+        print(report.id)
+    return render(request, 'app/confidentiality.html')
 
 
 def resources(request):
