@@ -9,14 +9,14 @@
         <form action="/">
           <h1>Attribute Collection</h1>
           <h4>First Name:</h4>
-            <textarea rows="1"></textarea>
+            <textarea rows="1" class="text"></textarea>
           <h4>Last Name:</h4>
               <textarea rows="1"></textarea>
           <h4>Add Social Media Identifiers (Optional):</h4>
-              <textarea rows="1" placeholder="Instagram Handle"></textarea>
-              <textarea rows="1" placeholder="Facebook URL"></textarea>
-              <textarea rows="1" placeholder="Snapchat Username"></textarea>
-              <textarea rows="1" placeholder="Phone Number"></textarea>
+              <textarea rows="1" placeholder="Instagram Handle" class="text"></textarea>
+              <textarea rows="1" placeholder="Facebook URL" class="text"></textarea>
+              <textarea rows="1" placeholder="Snapchat Username" class="text"></textarea>
+              <textarea rows="1" placeholder="Phone Number" class="text"></textarea>
           <h3>Physical Characteristics:</h3>
           <h4>Gender:</h4>
           <select>
@@ -27,7 +27,7 @@
           </select>
           <h4>Height:</h4>
           <select>
-            <option value=""></option>
+            <option value="" ></option>
             <option value="">5.0</option>
             <option value="2">5.3-5.5</option>
             <option value="3">5.6-5.8</option>
@@ -74,6 +74,9 @@
       min-height: 100%;
       background-color: rgb(127,0,255);
       }
+      .text{
+        width: auto;
+      }
       body, div, form, input, select {
       padding: 0;
       margin: 10px;
@@ -112,7 +115,7 @@
       box-shadow: 0 2px 5px #ccc;
       }
       input {
-      width: calc(100% - 10px);
+      width: auto;
       padding: 5px;
       border: 1px solid #ccc;
       border-radius: 3px;
@@ -132,6 +135,7 @@
       border: 1px solid #ccc;
       background: transparent;
       }
+
       select, table {
       width: 100%;
       }
