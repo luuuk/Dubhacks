@@ -9,3 +9,8 @@ class caseForm(forms.Form):
     class Meta:
         model = Report
         fields = ["case_type", "date", "description"]
+
+
+class agreeToTermsForm(forms.Form):
+    class Meta:
+        model = Report

@@ -6,7 +6,6 @@ class Report(models.Model):
     DEFAULT = 50
     id = models.IntegerField(primary_key=False, )
     uwnetid = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
-    #ipAddr = models.CharField(max_length = DEFAULT, null=True, default=None, blank=True)
     first_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     last_name = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)
     case_type = models.CharField(max_length=DEFAULT, null=True, default=None, blank=True)

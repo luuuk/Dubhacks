@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-from .forms import caseForm
+from .forms import caseForm, agreeToTermsForm
 from .models import Report
 
 def index(request):
@@ -17,17 +17,39 @@ def getID(Report):
 
 
 def confidentiality(request):
-    if request.method == 'POST':
-        print("collecting ip data")
-        report = Report()
-        report.save()
-        print(report.id)
+    if request.POST:
+        print("Begun reporting")
+        return render(request, 'app/confidentiality.html')
     return render(request, 'app/confidentiality.html')
+
+
+def case(request):
+    initial = {'id': request.session.get('id', None)}
+    form = agreeToTermsForm(request.POST or None, initial=initial)
+    if request.method == 'POST':
+        print("collecting ip data for form ")
+        print(form.id)
+        request.session['id'] = form.id
+        form.ipAddr = mockIP()
+
+        return render(request, 'app/case.html')
+    return render(request, 'app/case.html', {'form': form})
+
+
+def attributecollection(request):
+    form = caseForm(request.POST or None)
+    print(form.auto_id)
+    if request.method == 'POST':
+        if form.is_valid():
+            # report = form.save()
+            return render(request, 'app/attrCol.html')
+    return render(request, 'app/attrCol.html')
 
 
 def resources(request):
     print ("received to resources")
     return render(request, 'app/resources.html')
+
 
 def resourcesT(request):
     print("Received request to resourcesT")
@@ -48,23 +70,6 @@ def questions(request):
 
 def emailver(request):
     return render(request, 'app/emailVer.html')
-
-
-def case(request):
-    report = Report
-
-    if request.method == 'POST':
-        form = caseForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    context= {'form': form}
-
-    return render(request, 'app/case.html', context)
-
-
-def attributecollection(request):
-    return render(request, 'app/attrCol.html')
 
 
 def advisorconnect(request):
