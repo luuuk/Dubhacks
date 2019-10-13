@@ -54,19 +54,17 @@ def resources(request):
 
 def resourcesT(request):
     print("Received request to resourcesT")
-
     reps = Report.objects.all()
     single = reps[len(reps) - 3]
     try:
         address = single.uwnetid + "@uw.edu"
+        send_mail('This is a test',
+                  'Im watching you...',
+                  'save2019@hushmail.com',
+                  [address],
+                  fail_silently=False)
     except TypeError:
         pass
-
-    send_mail('This is a test',
-              'Im watching you...',
-              'save2019@hushmail.com',
-              [address],
-              fail_silently=False)
 
     return render(request, 'app/resources.html', {'submitted': 'TRUE'})
 
